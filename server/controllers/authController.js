@@ -30,11 +30,9 @@ const authController = {
     }
   },
   async isauth(req, res, next) {
-    try {
-      
-    } catch (error) {
-      
-    }
+    // passport does the heavy lifting here
+      res.json(req.user)
+
   }
 }
 
