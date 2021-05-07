@@ -13,7 +13,18 @@ const usersController = {
         }catch(error){
             next(error);
         }
-    }
+    },
+    async updateProfile(req,res, next){
+      try{
+          const user = await userService.updateUserProfile(req);
+          if(!user){
+              throw new ApiError(httpStatus.NOT_FOUND,'User not found')
+          }
+          res.json(res.locals.permission.filter(user._doc))          
+      }catch(error){
+          next(error);
+      }
+  }
 }
 
 module.exports = usersController;
