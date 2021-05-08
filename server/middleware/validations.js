@@ -20,9 +20,9 @@ const addProductValidator = [
     check('available')
         .not().isEmpty().withMessage('You must enter a amount available.'),
     check('itemSold')
-        .not().isEmpty().withMessage('You must enter a # of items sold.'),
+        .not().isEmpty().withMessage('You must enter # of items sold.'),
     check('shipping')
-        .isBoolean().not().isEmpty().withMessage('You must enter a # of items sold.').bail(),
+        .isBoolean().not().isEmpty().withMessage('You must enter, Yes or No.').bail(),
         
     (req,res,next)=>{
         const errors = validationResult(req);
