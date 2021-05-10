@@ -1,6 +1,4 @@
 const { productService } = require('../services');
-const httpStatus = require('http-status');
-const { ApiError } = require('../middleware/apiError');
 
 const productController = {
   async addProduct(req, res, next) {

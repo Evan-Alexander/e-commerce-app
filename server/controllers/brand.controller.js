@@ -1,5 +1,4 @@
 const { brandService } = require('../services');
-const httpStatus = require('http-status');
 
 
 const brandController = {
