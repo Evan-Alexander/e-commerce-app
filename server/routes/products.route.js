@@ -17,4 +17,7 @@ router.route('/product/:id')
 // GET ALL PRODUCTS
 router.get('/all', productController.getAllProducts)
 
+// GET W/ PRODUCT FILTERS
+router.post('/paginate/all', productController.paginateProducts)
+
 module.exports = router;
