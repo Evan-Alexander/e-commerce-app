@@ -111,6 +111,11 @@ tr:nth-child(even) {
   width: 100%;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /*============================
             FORM
 ==============================*/
@@ -349,6 +354,13 @@ select {
   border: 1px solid #f0f0f0;
 }
 
+.actions_container {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .card_item_wrapper .tags {
   position: relative;
   border-bottom: 1px solid #f0f0f0;
@@ -382,7 +394,7 @@ select {
   padding: 15px 0 10px 0;
 }
 
-.card_item_wrapper .actions .button_wrapp:nth-child(1) {
+.card_item_wrapper .actions .button_wrap:nth-child(1) {
   flex-grow: 1;
   padding-right: 10px;
 }
