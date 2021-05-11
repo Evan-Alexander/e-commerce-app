@@ -3,6 +3,9 @@ import { renderCardImage } from "./tools";
 import CustomButton from "./CustomButton";
 
 const Card = (props) => {
+  const handleAddToCart = () => {
+    alert("add to cart");
+  };
   return (
     <div className={`card_item_wrapper ${props.grid ? "grid_bars" : ""}`}>
       <div
@@ -21,8 +24,22 @@ const Card = (props) => {
           </div>
         ) : null}
         <div className="actions">
-          <div className="button_wrap">btn</div>
-          <div className="button_wrap">btn</div>
+          <div className="button_wrap">
+            <CustomButton
+              type="default"
+              altClass="card_link"
+              title="View product"
+              linkTo={`/product_detail/${props.item._id}`}
+              style={{ fontWeight: "bold" }}
+            />
+          </div>
+          <div className="button_wrap">
+            <CustomButton
+              type="bag_link"
+              runAction={() => handleAddToCart(props.item)}
+              iconSize="17"
+            />
+          </div>
         </div>
       </div>
     </div>

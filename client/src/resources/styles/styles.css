@@ -338,7 +338,7 @@ select {
 ==============================*/
 
 .card_item_wrapper {
-  width: 25%;
+  width: 250px;
   padding: 0 20px;
   box-sizing: border-box;
   position: relative;
@@ -354,16 +354,13 @@ select {
   border: 1px solid #f0f0f0;
 }
 
-.actions_container {
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .card_item_wrapper .tags {
   position: relative;
   border-bottom: 1px solid #f0f0f0;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card_item_wrapper .tags .brand,
@@ -374,19 +371,19 @@ select {
 }
 
 .card_item_wrapper .tags .brand {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   color: #2196f3;
 }
 
 .card_item_wrapper .tags .name {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .card_item_wrapper .tags .price {
   font-weight: 300;
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .card_item_wrapper .actions {
