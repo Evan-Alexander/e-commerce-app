@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
+import FeaturedSlider from "./FeaturedSlider";
 
 const Home = () => {
-
-    return(
-        <>
-            Home
-        </>
-    )
-
-}
+  return (
+    <>
+      <FeaturedSlider />
+    </>
+  );
+};
 
 export default Home;
