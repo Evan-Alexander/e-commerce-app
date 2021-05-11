@@ -1,0 +1,100 @@
+/*============================
+            HEADER
+==============================*/
+header {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+header .logo {
+  font-family: "Monoton", cursive;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 11px 0px;
+}
+
+header a,
+header span {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+header .container {
+  display: flex;
+}
+
+header .container .left {
+  width: 225px;
+  text-align: center;
+}
+
+header .container .right {
+  flex-grow: 1;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+header .container .right .top,
+header .container .right .bottom {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: right;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+header .container .right .top {
+  color: #c9c9c9;
+  border-bottom: 1px solid #ffffff;
+}
+
+header .cart_link {
+  display: inline-block;
+  position: relative;
+}
+
+header .cart_link span {
+  position: absolute;
+  background: red;
+  top: 1px;
+  color: #ffff;
+  left: -26px;
+  border-radius: 50%;
+  padding: 0px 7px 2px 7px;
+  font-size: 12px;
+}
+header .log_out_link {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/* 1200px */
+@media only screen and (min-width: 900px) {
+  header .container .right {
+    margin-right: 10vw;
+  }
+}
+/* 900px */
+@media only screen and (max-width: 899px) {
+  header .container {
+    width: auto;
+  }
+}
+
+/* 600px */
+@media only screen and (max-width: 600px) {
+  header .container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  header .container .left {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  header .container .right {
+    border-right: none;
+    border-left: none;
+  }
+}
