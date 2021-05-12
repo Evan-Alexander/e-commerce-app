@@ -5,7 +5,6 @@ import CardBlock from "../utils/CardBlock";
 import Loader from "../utils/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { productsBySort } from "../../store/actions/product.actions";
-import Carousel from "../utils/Carousel";
 
 const slimPromotion = {
   img: "/images/featured/featured_home_3.jpg",
