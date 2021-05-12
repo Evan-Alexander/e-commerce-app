@@ -4,7 +4,13 @@ import {
   SUCCESS_GLOBAL,
   ERROR_GLOBAL,
   CLEAR_NOTIFICATION,
+  AUTH_USER,
 } from "../types";
+
+export const authenticateUser = (data) => ({
+  type: AUTH_USER,
+  payload: data,
+});
 
 export const productsBySold = (data) => ({
   type: GET_PRODUCTS_BY_AMOUNT_SOLD,

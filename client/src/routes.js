@@ -4,6 +4,7 @@ import MainLayout from "./hoc/MainLayout";
 import Header from "./components/navigation/Header";
 import Footer from "./components/navigation/Footer";
 import Home from "./components/home";
+import RegisterLogin from "./components/authUsers/RegisterLogin";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <MainLayout>
         <Switch>
+          <Route path="/sign_in" component={RegisterLogin} />
           <Route path="/" component={Home} />
         </Switch>
       </MainLayout>
