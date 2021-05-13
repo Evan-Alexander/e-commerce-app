@@ -25,7 +25,6 @@ const AuthForm = (props) => {
         .min(5, "Password needs to be at least 5 characters."),
     }),
     onSubmit: (values) => {
-      console.log(values);
       setLoading(true);
       handleSubmit(values);
     },
