@@ -56,12 +56,12 @@ header .cart_link {
 header .cart_link span {
   position: absolute;
   background: red;
-  top: 1px;
+  top: -3px;
   color: #ffff;
   left: -26px;
   border-radius: 50%;
-  padding: 0px 7px 2px 7px;
-  font-size: 12px;
+  padding: 2px 7px 2px 7px;
+  font-size: 16px;
 }
 header .log_out_link {
   cursor: pointer;

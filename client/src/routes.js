@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { isAuthUser } from "./store/actions/user.actions";
+import { isAuthUser, signInUser } from "./store/actions/user.actions";
 
 import Loader from "./components/utils/Loader";
 
@@ -11,11 +11,14 @@ import Footer from "./components/navigation/Footer";
 import Home from "./components/home";
 import RegisterLogin from "./components/authUsers/RegisterLogin";
 
-function App() {
+function App(props) {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
+  const signOutUser = () => {
+    console.log("sign out!");
+  };
   useEffect(() => {
     dispatch(isAuthUser());
   }, [dispatch]);
@@ -32,7 +35,7 @@ function App() {
         <Loader full={true} />
       ) : (
         <>
-          <Header />
+          <Header users={users} signOutUser={signOutUser} />
           <MainLayout>
             <Switch>
               <Route path="/sign_in" component={RegisterLogin} />

@@ -8,9 +8,9 @@ import {
 } from "../types";
 
 // USERS
-export const authenticateUser = (data) => ({
+export const authenticateUser = (user) => ({
   type: AUTH_USER,
-  payload: data,
+  payload: user,
 });
 
 // PRODUCTS

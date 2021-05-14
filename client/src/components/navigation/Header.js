@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
-const Header = () => {
+const Header = ({ users, signOutUser }) => {
   return (
     <header className="bck_b_light">
       <div className="container">

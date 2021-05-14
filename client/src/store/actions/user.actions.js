@@ -48,9 +48,11 @@ export const isAuthUser = () => {
       if (!getTokenCookie()) {
         throw new Error();
       }
+
       const user = await axios.get(`/api/auth/isauth`, getAuthHeader());
+
       console.log(user);
-      console.log("working?");
+
       dispatch(actions.authenticateUser({ data: user.data, auth: true }));
     } catch (error) {
       dispatch(actions.authenticateUser({ data: {}, auth: false }));
