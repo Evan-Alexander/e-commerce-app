@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { isAuthUser, userSignOut } from "./store/actions/user.actions";
-
+import RouteGuard from "./hoc/RouteGuard";
 import Loader from "./components/utils/Loader";
 import MainLayout from "./hoc/MainLayout";
 
@@ -40,7 +40,7 @@ function App(props) {
           <Header users={users} signOutUser={signOutUser} />
           <MainLayout>
             <Switch>
-              <Route path="/dashboard" component={UserDashboard} />
+              <Route path="/dashboard" component={RouteGuard(UserDashboard)} />
               <Route path="/sign_in" component={RegisterLogin} />
               <Route path="/" component={Home} />
             </Switch>
