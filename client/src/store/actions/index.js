@@ -5,12 +5,17 @@ import {
   ERROR_GLOBAL,
   CLEAR_NOTIFICATION,
   AUTH_USER,
+  USER_SIGN_OUT,
 } from "../types";
 
 // USERS
 export const authenticateUser = (user) => ({
   type: AUTH_USER,
   payload: user,
+});
+
+export const userSignOut = () => ({
+  type: USER_SIGN_OUT,
 });
 
 // PRODUCTS

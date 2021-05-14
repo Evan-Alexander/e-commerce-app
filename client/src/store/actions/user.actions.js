@@ -42,6 +42,17 @@ export const signInUser = (values) => {
   };
 };
 
+export const userSignOut = () => {
+  return async (dispatch) => {
+    try {
+      removeTokenCookie();
+      dispatch(actions.userSignOut());
+    } catch (error) {
+      dispatch(actions.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
 export const isAuthUser = () => {
   return async (dispatch) => {
     try {

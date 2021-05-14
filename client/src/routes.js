@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { isAuthUser, signInUser } from "./store/actions/user.actions";
+import {
+  isAuthUser,
+  signInUser,
+  userSignOut,
+} from "./store/actions/user.actions";
 
 import Loader from "./components/utils/Loader";
 
@@ -17,7 +21,7 @@ function App(props) {
   const users = useSelector((state) => state.users);
 
   const signOutUser = () => {
-    console.log("sign out!");
+    dispatch(userSignOut());
   };
   useEffect(() => {
     dispatch(isAuthUser());
