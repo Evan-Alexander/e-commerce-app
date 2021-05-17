@@ -7,11 +7,8 @@ export default function routeGuard(ComposedComponent) {
     const users = useSelector((state) => state.users);
     const [isAuth, setIsAuth] = useState(false);
     useEffect(() => {
-      if (!users.auth) {
-        props.history.push("/");
-      } else {
-        setIsAuth(true);
-      }
+      if (!users.auth) props.history.push("/");
+      else setIsAuth(true);
     }, [users, props]);
 
     if (!isAuth) return <Loader full={true} />;

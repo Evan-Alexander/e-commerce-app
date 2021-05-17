@@ -8,7 +8,7 @@ const FeaturedSlider = () => {
       img: "/images/featured/featured_home.jpg",
       lineOne: "Fender",
       lineTwo: "Custom Shop",
-      lineTitle: "Show now",
+      lineTitle: "Shop now",
       linkTo: "/shop",
     },
     {

@@ -70,3 +70,27 @@ export const isAuthUser = () => {
     }
   };
 };
+
+export const updateUserProfile = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      const profile = await axios.patch(
+        `/api/users/profile`,
+        {
+          data: data,
+        },
+        getAuthHeader()
+      );
+
+      const userData = {
+        ...getState().users.data,
+        firstname: profile.data.firstname,
+        lastname: profile.data.lastname,
+      };
+      dispatch(actions.updateUserProfile(userData));
+      dispatch(actions.successGlobal("Profile updated !!"));
+    } catch (error) {
+      dispatch(actions.errorGlobal(error.response.data.message));
+    }
+  };
+};

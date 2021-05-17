@@ -12,6 +12,7 @@ import Home from "./components/home";
 import RegisterLogin from "./components/authUsers/RegisterLogin";
 
 import UserDashboard from "./components/dashboard";
+import UserInfo from "./components/dashboard/user/UserInfo";
 
 function App(props) {
   const [loading, setLoading] = useState(false);
@@ -21,6 +22,7 @@ function App(props) {
   const signOutUser = () => {
     dispatch(userSignOut());
   };
+
   useEffect(() => {
     dispatch(isAuthUser());
   }, [dispatch]);
@@ -30,16 +32,20 @@ function App(props) {
       setLoading(false);
     }
   }, [users]);
-  console.log(users);
+
   return (
     <BrowserRouter>
       {loading ? (
         <Loader full={true} />
       ) : (
         <>
-          <Header users={users} signOutUser={signOutUser} />
+          <Header users={users} userSignOut={userSignOut} />
           <MainLayout>
             <Switch>
+              <Route
+                path="/dashboard/user/user_info"
+                component={RouteGuard(UserInfo)}
+              />
               <Route path="/dashboard" component={RouteGuard(UserDashboard)} />
               <Route path="/sign_in" component={RegisterLogin} />
               <Route path="/" component={Home} />
