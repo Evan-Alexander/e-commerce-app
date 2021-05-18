@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardLayout from "../../hoc/DashboardLayout";
+import "./dashboard.css";
 
 const UserDashboard = ({ users }) => {
   const { firstname, lastname, email, history } = users.data;

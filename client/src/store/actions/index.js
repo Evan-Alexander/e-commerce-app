@@ -7,6 +7,7 @@ import {
   AUTH_USER,
   USER_SIGN_OUT,
   UPDATE_USER_PROFILE,
+  UPDATE_USER_EMAIL,
 } from "../types";
 
 // USERS
@@ -21,6 +22,10 @@ export const userSignOut = () => ({
 
 export const updateUserProfile = (userData) => ({
   type: UPDATE_USER_PROFILE,
+  payload: userData,
+});
+export const updateUserEmail = (userData) => ({
+  type: UPDATE_USER_EMAIL,
   payload: userData,
 });
 

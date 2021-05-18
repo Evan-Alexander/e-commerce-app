@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardLayout from "../../../hoc/DashboardLayout";
+import EmailStepper from "./Stepper";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { errorHelper } from "../../utils/tools";
@@ -63,6 +64,10 @@ const UserInfo = ({ users }) => {
           Edit profile
         </Button>
       </form>
+      <hr />
+      <div>
+        <EmailStepper user={users} />
+      </div>
     </DashboardLayout>
   );
 };

@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "./header.css";
 
 const Header = ({ users, signOutUser }) => {
   return (
     <header className="bck_b_light">
-      <div className="container">
+      <div className="header-container">
         <div className="left">
           <div className="logo">WAVES</div>
         </div>

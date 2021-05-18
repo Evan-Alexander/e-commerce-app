@@ -19,22 +19,22 @@ header span {
   margin-left: 20px;
 }
 
-header .container {
+.header-container {
   display: flex;
 }
 
-header .container .left {
+.header-container .left {
   width: 225px;
   text-align: center;
 }
 
-header .container .right {
+.header-container .right {
   flex-grow: 1;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
 }
-header .container .right .top,
-header .container .right .bottom {
+.header-container .right .top,
+.header-container .right .bottom {
   text-transform: uppercase;
   font-weight: 700;
   text-align: right;
@@ -43,7 +43,7 @@ header .container .right .bottom {
   padding: 10px 20px;
 }
 
-header .container .right .top {
+.header-container .right .top {
   color: #c9c9c9;
   border-bottom: 1px solid #ffffff;
 }
@@ -56,12 +56,12 @@ header .cart_link {
 header .cart_link span {
   position: absolute;
   background: red;
-  top: -3px;
+  top: -1px;
   color: #ffff;
-  left: -26px;
+  left: -29px;
   border-radius: 50%;
-  padding: 2px 7px 2px 7px;
-  font-size: 16px;
+  padding: 1px 8px;
+  font-size: 15px;
 }
 header .log_out_link {
   cursor: pointer;
@@ -71,29 +71,30 @@ header .log_out_link {
 
 /* 1200px */
 @media only screen and (min-width: 900px) {
-  header .container .right {
+  .header-container .right {
     margin-right: 10vw;
   }
 }
 /* 900px */
 @media only screen and (max-width: 899px) {
-  header .container {
+  .header-container {
     width: auto;
+    border-right: none;
   }
 }
 
 /* 600px */
 @media only screen and (max-width: 600px) {
-  header .container {
+  .header-container {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  header .container .left {
+  .header-container .left {
     width: 100%;
     justify-content: center;
     align-items: center;
   }
-  header .container .right {
+  .header-container .right {
     border-right: none;
     border-left: none;
   }
