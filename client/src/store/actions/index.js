@@ -8,6 +8,7 @@ import {
   USER_SIGN_OUT,
   UPDATE_USER_PROFILE,
   UPDATE_USER_EMAIL,
+  GET_PAGINATED_PRODUCTS,
 } from "../types";
 
 // USERS
@@ -38,6 +39,11 @@ export const productsBySold = (data) => ({
 export const productsByDate = (data) => ({
   type: GET_PRODUCTS_BY_DATE,
   payload: data,
+});
+
+export const paginatedProducts = (products) => ({
+  type: GET_PAGINATED_PRODUCTS,
+  payload: products,
 });
 
 // NOTIFICATIONS

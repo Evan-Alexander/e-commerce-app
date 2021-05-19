@@ -13,6 +13,7 @@ import RegisterLogin from "./components/authUsers/RegisterLogin";
 
 import UserDashboard from "./components/dashboard";
 import UserInfo from "./components/dashboard/user/UserInfo";
+import AdminProducts from "./components/dashboard/admin/PaginatedProducts";
 
 function App(props) {
   const [loading, setLoading] = useState(false);
@@ -42,6 +43,10 @@ function App(props) {
           <Header users={users} userSignOut={userSignOut} />
           <MainLayout>
             <Switch>
+              <Route
+                path="/dashboard/admin/admin_products"
+                component={RouteGuard(AdminProducts)}
+              />
               <Route
                 path="/dashboard/user/user_info"
                 component={RouteGuard(UserInfo)}

@@ -8,7 +8,7 @@ const CardBlock = ({ items, title, shop, grid }) => {
       : null;
   return (
     <div className={shop ? "card_block_shop" : "card_block"}>
-      <div className={shop ? "" : "container"}>
+      <div className={shop ? "" : "custom-container"}>
         {title ? <div className="title">{title}</div> : null}
         <div className="flex">{renderCards()}</div>
       </div>

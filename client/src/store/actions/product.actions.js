@@ -29,3 +29,14 @@ export const productsBySort = ({ limit, sortBy, order, where }) => {
     }
   };
 };
+
+export const paginatedProducts = (args) => {
+  return async (dispatch) => {
+    try {
+      const products = await axios.post(`/api/products/paginate/all`, args);
+      dispatch(actions.paginatedProducts(products.data));
+    } catch (error) {
+      actions.errorGlobal("No products found.  Try again.");
+    }
+  };
+};
