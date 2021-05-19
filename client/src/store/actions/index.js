@@ -9,6 +9,7 @@ import {
   UPDATE_USER_PROFILE,
   UPDATE_USER_EMAIL,
   GET_PAGINATED_PRODUCTS,
+  REMOVE_PRODUCT,
 } from "../types";
 
 // USERS
@@ -44,6 +45,10 @@ export const productsByDate = (data) => ({
 export const paginatedProducts = (products) => ({
   type: GET_PAGINATED_PRODUCTS,
   payload: products,
+});
+
+export const removeProduct = () => ({
+  type: REMOVE_PRODUCT,
 });
 
 // NOTIFICATIONS

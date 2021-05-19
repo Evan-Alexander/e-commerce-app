@@ -3,9 +3,17 @@ import { Table, Pagination, Modal, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import Moment from "react-moment";
 import Loader from "../../utils/Loader";
-import DashboardLayout from "../../../hoc/DashboardLayout";
 
-const ProductTable = ({ products, previous, next, goToEditPg }) => {
+const ProductTable = ({
+  products,
+  previous,
+  next,
+  goToEditPg,
+  removeModal,
+  handleClose,
+  handleModal,
+  handleRemove,
+}) => {
   const goToPrevPage = (page) => {
     previous(page);
   };
@@ -42,7 +50,7 @@ const ProductTable = ({ products, previous, next, goToEditPg }) => {
 
                   <td
                     className="action_btn remove_btn"
-                    onClick={() => alert("Remove")}
+                    onClick={() => handleModal(item._id)}
                   >
                     Remove
                   </td>
@@ -84,6 +92,20 @@ const ProductTable = ({ products, previous, next, goToEditPg }) => {
       ) : (
         <Loader />
       )}
+      <Modal show={removeModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Are you really sure ?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>There is no going back.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={() => handleRemove()}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

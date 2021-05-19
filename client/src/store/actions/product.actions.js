@@ -1,6 +1,13 @@
 import * as actions from "./index";
 import axios from "axios";
 
+import {
+  getAuthHeader,
+  removeTokenCookie,
+  getTokenCookie,
+} from "../../components/utils/tools";
+axios.defaults.headers.post["Content-Type"] = "application/json";
+
 export const productsBySort = ({ limit, sortBy, order, where }) => {
   return async (dispatch) => {
     try {
@@ -37,6 +44,18 @@ export const paginatedProducts = (args) => {
       dispatch(actions.paginatedProducts(products.data));
     } catch (error) {
       actions.errorGlobal("No products found.  Try again.");
+    }
+  };
+};
+
+export const removeProduct = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`/api/products/product/${id}`, getAuthHeader());
+      dispatch(actions.removeProduct());
+      dispatch(actions.successGlobal());
+    } catch (error) {
+      dispatch(actions.errorGlobal(error.response.data.message));
     }
   };
 };
