@@ -9,7 +9,7 @@ import { TextField, Button } from "@material-ui/core";
 import { updateUserProfile } from "../../../store/actions/user.actions";
 
 const UserInfo = ({ users }) => {
-  const { firstname, lastname, email } = users.data;
+  const { firstname, lastname } = users.data;
 
   const dispatch = useDispatch();
 

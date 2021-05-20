@@ -81,7 +81,7 @@ const AdminProducts = (props) => {
     if (notifications && notifications.removeArticle) {
       dispatch(paginatedProducts(searchValues));
     }
-  }, [dispatch, notifications]);
+  }, [dispatch, notifications, searchValues]);
 
   return (
     <DashboardLayout title="Products">

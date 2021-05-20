@@ -85,7 +85,7 @@ const ProductTable = ({
               </>
             ) : null}
           </Pagination>
-          <LinkContainer to="/dashboard/admin/add_products">
+          <LinkContainer to="/dashboard/admin/add_product">
             <Button variant="secondary">Add product</Button>
           </LinkContainer>
         </>

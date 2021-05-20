@@ -10,6 +10,9 @@ import {
   UPDATE_USER_EMAIL,
   GET_PAGINATED_PRODUCTS,
   REMOVE_PRODUCT,
+  GET_BRANDS,
+  ADD_PRODUCT,
+  CLEAR_ADDED_PRODUCT,
 } from "../types";
 
 // USERS
@@ -47,9 +50,20 @@ export const paginatedProducts = (products) => ({
   payload: products,
 });
 
+export const addProduct = (newProduct) => ({
+  type: ADD_PRODUCT,
+  payload: newProduct,
+});
+
 export const removeProduct = () => ({
   type: REMOVE_PRODUCT,
 });
+
+export const clearAddedProduct = () => {
+  return {
+    type: CLEAR_ADDED_PRODUCT,
+  };
+};
 
 // NOTIFICATIONS
 export const successGlobal = (msg) => ({
@@ -69,3 +83,9 @@ export const clearNotification = () => {
     });
   };
 };
+
+// BRANDS
+export const getBrands = (brands) => ({
+  type: GET_BRANDS,
+  payload: brands,
+});
